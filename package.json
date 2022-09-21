@@ -1,0 +1,25 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "# 10 Object-Oriented Programming: Team Profile Generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RahmaBilal/team-profile-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RahmaBilal/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/RahmaBilal/team-profile-generator#readme",
+  "dependencies": {
+    "jest": "^29.0.3"
+  }
+}
