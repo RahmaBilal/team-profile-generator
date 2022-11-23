@@ -68,3 +68,40 @@ const addManager = () => {
       createTeam();
     });
 };
+
+
+const addEngineer = () => {
+  return inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "engineerName",
+        message: "Enter engineer's name:",
+      },
+      {
+        type: "input",
+        name: "engineerId",
+        message: "Enter employee ID:",
+      },
+      {
+        type: "input",
+        name: "engineerEmail",
+        message: "Enter engineer's email address:",
+      },
+      {
+        type: "input",
+        name: "engineerGithub",
+        message: "Enter engineer's github username:",
+      },
+    ])
+    .then((answers) => {
+      const Engineer = new engineer(
+        answers.engineerName,
+        answers.engineerId,
+        answers.engineerEmail,
+        answers.engineerGithub
+      );
+      employeeArray.push(Engineer);
+      createTeam();
+    });
+};
