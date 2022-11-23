@@ -105,3 +105,51 @@ const addEngineer = () => {
       createTeam();
     });
 };
+
+const addIntern = () => {
+  return inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "internName",
+        message: "Enter intern's name:",
+      },
+      {
+        type: "input",
+        name: "internId",
+        message: "Enter employee ID:",
+      },
+      {
+        type: "input",
+        name: "internEmail",
+        message: "Enter intern's email address:",
+      },
+      {
+        type: "input",
+        name: "internSchool",
+        message: "Enter intern's school:",
+      },
+    ])
+    .then((answers) => {
+      const Intern = new intern(
+        answers.internName,
+        answers.internId,
+        answers.internEmail,
+        answers.internSchool
+      );
+      employeeArray.push(Intern);
+      createTeam();
+    });
+};
+
+const employeeArray = [];
+
+function generateWebpage() {
+  generateCards = generateTemplate(employeeArray);
+  fs.writeFile("./dist/index.html", generateCards, (err) => {
+    if (err) throw new Error(err);
+    console.log("HTML file created successfully!");
+  });
+}
+
+createTeam();
