@@ -32,3 +32,39 @@ const createTeam = () => {
       }
     });
 };
+
+const addManager = () => {
+  return inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "managerName",
+        message: "Enter manager name:",
+      },
+      {
+        type: "input",
+        name: "managerId",
+        message: "Enter manager ID: ",
+      },
+      {
+        type: "input",
+        name: "managerEmail",
+        message: "Enter manager's email address:",
+      },
+      {
+        type: "input",
+        name: "officeNumber",
+        message: "Enter manager's office number:",
+      },
+    ])
+    .then((answers) => {
+      const Manager = new manager(
+        answers.managerName,
+        answers.managerId,
+        answers.managerEmail,
+        answers.officeNumber
+      );
+      employeeArray.push(Manager);
+      createTeam();
+    });
+};
