@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/RahmaBilal/team-profile-generator#readme",
   "dependencies": {
-    "inquirer": "^9.1.4",
-    "jest": "^29.0.3"
+    "axios": "^1.2.0",
+    "express": "^4.18.2",
+    "inquirer": "^8.2.5",
+    "jest": "^29.3.1"
   }
 }
