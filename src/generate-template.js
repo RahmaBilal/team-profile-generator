@@ -51,3 +51,28 @@ const generateTemplate = (teamMembers) => {
   </div>
           `;
     };
+
+    const team = [];
+  
+    team.push(
+      teamMembers
+        .filter((employee) => employee.getRole() === "Manager")
+        .map((manager) => generateManagerCard(manager))
+    );
+    team.push(
+      teamMembers
+        .filter((employee) => employee.getRole() === "Engineer")
+        .map((engineer) => generateEngineerCard(engineer))
+        .join("")
+    );
+    team.push(
+      teamMembers
+        .filter((employee) => employee.getRole() === "Intern")
+        .map((intern) => generateInternCard(intern))
+        .join("")
+    );
+  
+    return team.join("");
+  };
+
+  
