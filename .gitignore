@@ -102,3 +102,8 @@ dist
 
 # TernJS port file
 .tern-port
+_tests_/Employee.test.js
+_tests_/Engineer.test.js
+_tests_/Intern.test.js
+.gitignore
+.gitignore
